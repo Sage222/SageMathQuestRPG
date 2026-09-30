@@ -1,0 +1,191 @@
+html, body {
+  background: #0d0d12;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  overflow: hidden;
+}
+#game {
+  background: #000;
+  border: 6px solid #444;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 960px;
+  height: 704px;
+}
+#hud {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  text-shadow: 2px 2px #000;
+  pointer-events: none;
+  background: rgba(0,0,0,0.4);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+#minimap {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 180px;
+  height: 180px;
+  border: 4px solid #444;
+  border-radius: 4px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: #000;
+}
+#start-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #1a2e1a 0%, #05070a 80%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 100;
+  padding: 20px;
+  overflow-y: auto;
+}
+#start-screen h1 {
+  font-size: 48px;
+  color: #f1c40f;
+  text-shadow: 4px 4px #000;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+#story-text {
+  max-width: 640px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dcdcdc;
+  margin-bottom: 20px;
+}
+#grade-select {
+  margin-bottom: 20px;
+}
+#grade-select p {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+#grade-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.grade-btn {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px 16px;
+  background: #2c3e50;
+  border: 3px solid #7f8c8d;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.grade-btn:hover { background: #34495e; }
+.grade-btn.selected {
+  background: #27ae60;
+  border-color: #2ecc71;
+}
+#press-start {
+  font-size: 22px;
+  color: #2ecc71;
+  cursor: pointer;
+  animation: blink 1.2s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+#dialogue-box {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  background: rgba(20,20,30,0.95);
+  border: 3px solid #f1c40f;
+  border-radius: 6px;
+  padding: 16px 20px;
+  font-size: 18px;
+}
+#battle-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,20,0.92);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#narration {
+  max-width: 500px;
+  font-size: 16px;
+  font-style: italic;
+  color: #f1c40f;
+  min-height: 24px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.bar-bg {
+  width: 400px;
+  height: 22px;
+  background: #333;
+  border: 3px solid #888;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 6px 0;
+}
+.bar-fill { height: 100%; transition: width 0.05s linear; }
+#hp-enemy-fill { background: #e74c3c; width: 100%; }
+#hp-player-fill { background: #2ecc71; width: 100%; }
+#timer-fill { background: #f1c40f; width: 100%; }
+#question { font-size: 40px; margin: 20px 0; letter-spacing: 2px; }
+#choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 560px;
+}
+.choice-btn {
+  font-size: 24px;
+  padding: 14px 20px;
+  background: #2c3e50;
+  border: 3px solid #7f8c8d;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: inherit;
+}
+.choice-btn:hover { background: #34495e; }
+#feedback {
+  font-size: 18px;
+  max-width: 500px;
+  min-height: 44px;
+  margin-top: 10px;
+  text-align: center;
+}
+#game-over, #victory-banner {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+button.restart { font-size: 22px; margin-top: 20px; padding: 12px 24px; cursor: pointer; }

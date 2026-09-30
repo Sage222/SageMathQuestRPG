@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Math Quest RPG</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="start-screen">
+  <h1>Math Quest RPG</h1>
+  <p id="story-text">
+    Long ago, the kingdom of Numeria was protected by the Ancient Formula &mdash;
+    a spell of pure mathematics that kept the land safe and every creature in
+    the realm calm and peaceful.<br><br>
+    One stormy night, the Formula shattered. Monsters now roam the fields,
+    forests, and mountains, and the old castles stand empty and guarded.<br><br>
+    You are the last apprentice of Numeria's wisest wizard. Only someone who
+    can solve the ancient number-riddles in battle can weaken the monsters,
+    reclaim the lost treasure, and restore peace to the land.<br><br>
+    Your quest begins now, hero.
+  </p>
+
+  <div id="grade-select">
+    <p>Choose your grade level:</p>
+    <div id="grade-buttons">
+      <button class="grade-btn" data-age="10">Age 10</button>
+      <button class="grade-btn" data-age="11">Age 11</button>
+      <button class="grade-btn" data-age="12">Age 12</button>
+      <button class="grade-btn" data-age="13">Age 13</button>
+      <button class="grade-btn" data-age="14">Age 14</button>
+    </div>
+  </div>
+
+  <div id="press-start">Press Enter or Click Here to Start</div>
+</div>
+
+<canvas id="game" width="480" height="352"></canvas>
+
+<div id="hud">
+  <div>Level: <span id="hud-level">1</span> &nbsp; Streak: <span id="hud-streak">0</span>/10</div>
+  <div>HP: <span id="hud-hp">20</span>/<span id="hud-maxhp">20</span></div>
+  <div>Gold: <span id="hud-gold">0</span></div>
+  <div>XP: <span id="hud-xp">0</span></div>
+  <div>Steps: <span id="hud-steps">0</span></div>
+  <div>Enemies Slain: <span id="hud-slain">0</span></div>
+</div>
+
+<canvas id="minimap" width="120" height="120"></canvas>
+
+<div id="dialogue-box">
+  <p id="dialogue-text"></p>
+  <p style="font-size:12px;opacity:0.7;">Press Enter or Space to close</p>
+</div>
+
+<div id="battle-overlay">
+  <div id="narration"></div>
+  <div>Enemy HP</div>
+  <div class="bar-bg"><div id="hp-enemy-fill" class="bar-fill"></div></div>
+  <div>Your HP</div>
+  <div class="bar-bg"><div id="hp-player-fill" class="bar-fill"></div></div>
+  <div class="bar-bg" style="width:300px;"><div id="timer-fill" class="bar-fill"></div></div>
+  <div id="question">?</div>
+  <div id="choices"></div>
+  <div id="feedback"></div>
+</div>
+
+<div id="victory-banner">
+  <div>Victory!</div>
+  <div id="loot-text" style="font-size:20px;margin-top:10px;"></div>
+</div>
+
+<div id="game-over">
+  <div>You were defeated!</div>
+  <button class="restart" onclick="restartGame()">Try Again</button>
+</div>
+
+<script src="config.js"></script>
+<script src="world.js"></script>
+<script src="npc.js"></script>
+<script src="enemy.js"></script>
+<script src="player.js"></script>
+<script src="battle.js"></script>
+<script src="minimap.js"></script>
+<script src="startscreen.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
